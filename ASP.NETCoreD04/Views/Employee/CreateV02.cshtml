@@ -1,0 +1,78 @@
+﻿@model EmployeeCreateVM
+
+<h1 class="d-flex justify-content-center text-success">
+    Create New Employee V02
+</h1>
+
+<hr />
+<br />
+<br />
+
+<form asp-action="CreateV02" asp-controller="Employee" method="post">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Name" class="form-label"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Age" class="form-label"></label>
+        <input class="form-control" asp-for="Age" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Salary" class="form-label"></label>
+        <input class="form-control" asp-for="Salary" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Email" class="form-label"></label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Address" class="form-label"></label>
+        <input class="form-control" asp-for="Address" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Password" class="form-label"></label>
+        <input class="form-control" asp-for="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="ConfirmPassword" class="form-label"></label>
+        <input class="form-control" asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3 form-group">
+        <label for="DepartmentId" class="form-label">Department</label>
+        <select class="form-select" asp-for="DepartmentId" asp-items="Model.Departments">
+        </select>
+        <span asp-validation-for="DepartmentId" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-success" value="Create Employee" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+
+</form>
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
+
+   @* <partial name="_ValidationScriptsPartial" /> *@
+    @* @Html.RenderPartialAsync("_ValidationScriptsPartial") *@

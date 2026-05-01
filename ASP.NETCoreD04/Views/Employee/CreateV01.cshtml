@@ -1,0 +1,40 @@
+﻿@model Employee
+
+<h1 class="d-flex justify-content-center text-success">
+    Create New Employee V01
+</h1>
+
+<hr />
+<br />
+<br />
+
+<form asp-action="CreateV01" asp-controller="Employee" method="post">
+
+    <div class="mb-3 form-group">
+        <label asp-for="Name" class="form-label"></label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Age" class="form-label"></label>
+        <input class="form-control" asp-for="Age" />
+    </div>
+
+    <div class="mb-3 form-group">
+        <label asp-for="Salary" class="form-label"></label>
+        <input class="form-control" asp-for="Salary" />
+    </div>
+
+
+    <div class="mb-3 form-group">
+        <label for="DepartmentId" class="form-label">Department</label>
+        <select class="form-select" asp-items="ViewBag.Departments" asp-for="DepartmentId">
+        </select>
+    </div>
+
+    <div class="d-flex justify-content-center gap-3">
+        <input type="submit" class="btn btn-success" value="Create Employee" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-outline-secondary">Cancel</a>
+    </div>
+
+</form>

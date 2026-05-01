@@ -1,0 +1,10 @@
+﻿@model DepartmentReadVM
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">Department Id: @Model.Id</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Department Name: @Model.Name</h6>
+        <a href="~/Department/Index/@Model.Id" class="btn btn-outline-primary">Back</a>
+        @Html.ActionLink("Back", "Index", "Department", null, new { @class = "btn btn-outline-success" })
+    </div>
+</div>
